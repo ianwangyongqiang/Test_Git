@@ -2,6 +2,7 @@ package com.skycopyhot.gittest;
 
 import java.util.Locale;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,6 +11,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -53,6 +55,16 @@ public class GitActivity extends FragmentActivity {
 		getMenuInflater().inflate(R.menu.git, menu);
 		return true;
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == R.id.action_settings) {
+			Intent intent = new Intent(this, TestInputActivity.class);
+			startActivity(intent);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 
 	/**
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -95,6 +107,8 @@ public class GitActivity extends FragmentActivity {
 			}
 			return null;
 		}
+		
+		
 	}
 
 	/**
@@ -120,8 +134,12 @@ public class GitActivity extends FragmentActivity {
 					.findViewById(R.id.section_label);
 			dummyTextView.setText(Integer.toString(getArguments().getInt(
 					ARG_SECTION_NUMBER)));
+			
+			GitLog.i("git test", "come to fragment");
 			return rootView;
 		}
+		
+		
 	}
 
 }
