@@ -1,9 +1,12 @@
-package com.skycopyhot.gittest;
+package com.skycopyhot.gittest.activity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.skycopyhot.gittest.Config;
+import com.skycopyhot.gittest.R;
 
 import android.app.ListActivity;
 import android.content.Intent;

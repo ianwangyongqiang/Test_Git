@@ -1,4 +1,6 @@
-package com.skycopyhot.gittest;
+package com.skycopyhot.gittest.activity;
+
+import com.skycopyhot.gittest.R;
 
 import android.app.Activity;
 //import android.content.Context;
