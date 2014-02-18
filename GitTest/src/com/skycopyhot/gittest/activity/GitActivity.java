@@ -15,6 +15,8 @@ import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 public class GitActivity extends ListActivity {
@@ -121,6 +123,15 @@ public class GitActivity extends ListActivity {
         result.setClass(this, GitActivity.class);
         result.putExtra(Config.GITTEST_PATH, path);
         return result;
+    }
+    
+    @SuppressWarnings("unchecked")
+	@Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+    	Map<String, Object> map = (Map<String, Object>)l.getItemAtPosition(position);
+
+        Intent intent = (Intent) map.get("intent");
+        startActivity(intent);
     }
 
 }
