@@ -31,7 +31,7 @@ public class GitActivity extends ListActivity {
 		}
 		setListAdapter(new SimpleAdapter(this, getData(path), android.R.layout.simple_list_item_1, new String[] {"title"}, new int[] {android.R.id.text1}));
 	}
-	
+
 	private List<HashMap<String, Object>> getData(String prefix) {
 		List<HashMap<String, Object>> data = new ArrayList<HashMap<String,Object>>();
 		
@@ -91,6 +91,7 @@ public class GitActivity extends ListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+        //test for git using android studio
 		getMenuInflater().inflate(R.menu.git, menu);
 		return true;
 	}
